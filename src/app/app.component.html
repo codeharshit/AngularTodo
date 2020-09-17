@@ -1,0 +1,22 @@
+<h1 style = "text-align:center">Harshit's Todo List </h1>
+
+<div style="text-align: center">
+  <input type = "text" #item placeholder="Add Item">
+  <button (click)="addTodo(item.value)">Add</button>
+</div>
+<table class = "center">
+  <tr>
+    <th>Label</th>
+    <th>Priority</th>
+    <th>Done</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let x of todos">
+    <td>{{x.label}}</td>
+    <td>{{x.priority}}</td>
+    <td>{{x.done}}</td>
+    <!-- <td> -->
+      <button (click)="deleteTodo(x)">Delete</button> <!--By not including in td, it removes all the duplicate copy-->
+    <!-- </td> -->
+  </tr>
+</table>
